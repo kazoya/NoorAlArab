@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# نور العرب — تصور الذكاء الصناعي
 
-## Getting Started
+منصة عرض تفاعلية ومقترح أولي مستقل لشركة **نور العرب للصناعات البلاستيكية — الأردن**.
 
-First, run the development server:
+ليست نظاماً رسمياً تابعاً للشركة، ولا تفترض أن العمليات الحالية تعمل بالصورة المعروضة. الهدف أن يرى فريق الإدارة كيف يمكن ربط المبيعات وعروض الأسعار والإنتاج والمعرفة والمشتريات والجودة واللوجستيات والإدارة، ثم يحدَّد النطاق بعد الاكتشاف.
+
+## 1. التثبيت
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+افتح [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 2. متغيرات البيئة
 
-## Learn More
+انسخ `.env.example` إلى `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
+```
+NEXT_PUBLIC_DISCOVERY_FORM_URL=
+NEXT_PUBLIC_WHATSAPP_PHONE=
+NEXT_PUBLIC_WHATSAPP_PREFILL=
+NEXT_PUBLIC_CONTACT_EMAIL=
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+OPENAI_API_KEY=
+DATABASE_URL=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- لا تضع أسراراً بخادمية خلف `NEXT_PUBLIC_`.
+- المنصة تعمل بدون `OPENAI_API_KEY` عبر إجابات محاكاة حتمية.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 3. ربط Google Form
 
-## Deploy on Vercel
+1. أنشئ نموذجاً يطابق أقسام التقييم الأحد عشر (مبيعات، مواصفات، تسعير، إنتاج، جودة، مواد، مخزون، لوجستيات، مندوبون، أنظمة، تقارير إدارة).
+2. من تبويب الإرسال انسخ رابط الاستجابة.
+3. ضعه في `NEXT_PUBLIC_DISCOVERY_FORM_URL`.
+4. زر **فتح النموذج الكامل** يظهر في التقييم والتذييل.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+إن تُرك المتغير فارغاً يبقى النموذج الداخلي يعمل، ويُعرض توجيه إعداد بدل رابط وهمي.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 4. واتساب
+
+```
+NEXT_PUBLIC_WHATSAPP_PHONE=962777700050
+NEXT_PUBLIC_WHATSAPP_PREFILL=مرحباً مهندس محمد أبوخليفة لطفاً أود التحدث بخصوص 
+```
+
+يُبنى الرابط `https://wa.me/{phone}?text=...` ويظهر رمز QR في التذييل وصفحة التواصل. لا يُثبَّت الرقم في الشيفرة.
+
+## 5. البريد
+
+`NEXT_PUBLIC_CONTACT_EMAIL` يظهر كرابط `mailto` عند ضبطه فقط.
+
+## 6. استبدال البيانات التجريبية
+
+البيانات في `/data` ومترابطة عبر `/lib/data`. كل المجموعات معلّمة كتجريبية. لاستبدالها:
+
+- أبقِ الأنواع في `/types`
+- غيّر الملفات تحت `/data` أو استبدل دوال `/lib/data` باستدعاء API
+
+لا تعرض أرقام تشغيل المصنع الحقيقية كحقائق إلا بعد التحقق.
+
+## 7. ربط قاعدة بيانات لاحقاً
+
+`DATABASE_URL` محجوز للخادم فقط. مسار مقترح: Route Handlers في `app/api` ثم استبدال `catalog` في `lib/data/index.ts`.
+
+## 8. المصادقة لاحقاً
+
+هذه النسخة للعرض الخاص. عند التشغيل الداخلي أضيفوا مزود هوية، أدواراً حسب القسم، وعزل بيئة العرض عن الإنتاج.
+
+## 9. واتساب للأعمال لاحقاً
+
+الاستلام → تصنيف → استخراج → مهمة → اعتماد بشري → رد. لا يُرسل عرض حساس دون تفويض.
+
+## 10. البريد لاحقاً
+
+صندوق مشترك أو Microsoft 365 / Google Workspace عبر OAuth، ثم نفس مسار التصنيف والاعتماد.
+
+## 11. ERP لاحقاً
+
+بعد الاكتشاف: إن وُجدت واجهة استخدمها؛ وإلا استيراد Excel/CSV كجسر مؤقت.
+
+## 12. الذكاء / المعرفة لاحقاً
+
+مستندات → قراءة → تقسيم → تمثيل → قاعدة متجهات → صلاحيات → استرجاع → نموذج → ذكر المصدر.  
+يمكن تشغيل وكيل متخصص للرد الآلي على الاستفسارات المصرّح بها (مواصفات أو أسعار معلنة) مع بقاء الاعتماد البشري للقرار التجاري.
+
+`OPENAI_API_KEY` اختياري. العرض الحالي لا يستدعي نموذجاً إن غاب المفتاح.
+
+## 13. النشر على Vercel
+
+1. ارفع المستودع واربطه بمشروع Vercel.
+2. أضف متغيرات البيئة (واتساب، Google Form، البريد، عنوان الموقع).
+3. إطار العمل: Next.js. الأمر الافتراضي `next build` كافٍ.
+
+## الصدق
+
+لا تُختلق أرقام آلات أو طاقات أو إيراد أو أنظمة قائمة. شارة **بيانات تجريبية** أو **سيناريو توضيحي — يحتاج تحقق المصنع** تظهر مع أي مجموعة عرض.
+
+## الترخيص
+
+تصور تقني مستقل لأغراض النقاش. لا يتضمن شعارات محمية للشركة.
