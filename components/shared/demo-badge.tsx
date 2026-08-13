@@ -26,8 +26,8 @@ export function DemoBadge({
 
 export function HonestyNote({ children }: { children: ReactNode }) {
   return (
-    <p className="rounded-lg border border-dashed border-border bg-muted/50 px-3 py-2 text-sm leading-7 text-muted-foreground">
+    <div className="rounded-lg border border-dashed border-border bg-muted/50 px-3 py-2 text-sm leading-7 text-muted-foreground">
       {children}
-    </p>
+    </div>
   );
 }

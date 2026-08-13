@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import {
   getWhatsAppPhoneDisplay,
@@ -8,6 +9,11 @@ import {
 } from "@/lib/config";
 
 export function WhatsAppQr() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const url = getWhatsAppUrl();
   const phone = getWhatsAppPhoneDisplay();
   if (!url) {
@@ -28,7 +34,11 @@ export function WhatsAppQr() {
       ) : null}
       <div className="flex items-start gap-4">
         <div className="rounded-lg border border-gold/40 bg-white p-2">
-          <QRCodeSVG value={url} size={112} level="M" />
+          {mounted ? (
+            <QRCodeSVG value={url} size={112} level="M" />
+          ) : (
+            <span className="block bg-white" style={{ width: 112, height: 112 }} />
+          )}
         </div>
         <div className="space-y-2 text-xs leading-6 text-muted-foreground">
           <p>امسح الرمز أو اضغط الرابط لفتح محادثة برسالة جاهزة:</p>

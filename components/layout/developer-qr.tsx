@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import {
   getDeveloperWhatsAppPhoneDisplay,
@@ -13,6 +14,11 @@ type DeveloperQrProps = {
 };
 
 export function DeveloperQr({ compact = false }: DeveloperQrProps) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const url = getDeveloperWhatsAppUrl();
   const phone = getDeveloperWhatsAppPhoneDisplay();
   if (!url) return null;
@@ -34,7 +40,11 @@ export function DeveloperQr({ compact = false }: DeveloperQrProps) {
         <span className="qr-glow-halo" aria-hidden />
         <span className="qr-orbit" aria-hidden />
         <span className="relative z-10 rounded-md bg-white p-1 ring-1 ring-gold/50">
-          <QRCodeSVG value={url} size={size} level="M" />
+          {mounted ? (
+            <QRCodeSVG value={url} size={size} level="M" />
+          ) : (
+            <span className="block bg-white" style={{ width: size, height: size }} />
+          )}
         </span>
       </span>
       <span className={cn("min-w-0 text-right leading-snug", compact && "sr-only")}>

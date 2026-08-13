@@ -7,7 +7,6 @@ import { CommandBar } from "@/components/layout/command-bar";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -19,24 +18,26 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="border-b border-sidebar-border px-4 py-5">
           <BrandMark size="md" tone="dark" />
         </div>
-        <ScrollArea className="flex-1 px-3">
+        <div className="flex-1 overflow-y-auto px-3">
           <SidebarNav />
-        </ScrollArea>
+        </div>
       </aside>
 
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent side="right" className="w-80 bg-sidebar p-0 text-sidebar-foreground">
-          <SheetHeader className="sr-only">
-            <SheetTitle>القائمة</SheetTitle>
-          </SheetHeader>
-          <div className="border-b border-sidebar-border px-4 py-5">
-            <BrandMark size="md" tone="dark" />
-          </div>
-          <ScrollArea className="h-[calc(100dvh-5rem)] px-3">
-            <SidebarNav onNavigate={() => setOpen(false)} />
-          </ScrollArea>
-        </SheetContent>
-      </Sheet>
+      {open ? (
+        <Sheet open onOpenChange={setOpen}>
+          <SheetContent side="right" className="w-80 bg-sidebar p-0 text-sidebar-foreground">
+            <SheetHeader className="sr-only">
+              <SheetTitle>القائمة</SheetTitle>
+            </SheetHeader>
+            <div className="border-b border-sidebar-border px-4 py-5">
+              <BrandMark size="md" tone="dark" />
+            </div>
+            <div className="h-[calc(100dvh-5rem)] overflow-y-auto px-3">
+              <SidebarNav onNavigate={() => setOpen(false)} />
+            </div>
+          </SheetContent>
+        </Sheet>
+      ) : null}
 
       <div className="lg:pr-72">
         <BrandTopBar />

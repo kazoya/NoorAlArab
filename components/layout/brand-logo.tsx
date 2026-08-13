@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
 
@@ -13,13 +12,21 @@ export function BrandLogo({
   alt = "شعار نور العرب",
   priority = false,
 }: BrandLogoProps) {
+  const src = typeof logo === "string" ? logo : logo.src;
+  const width = typeof logo === "string" ? 835 : logo.width;
+  const height = typeof logo === "string" ? 1024 : logo.height;
+
   return (
-    <Image
-      src={logo}
+    // Native img avoids next/image wrapper mismatches during hydration.
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
       alt={alt}
+      width={width}
+      height={height}
       className={cn("h-full w-full object-cover object-center", className)}
-      priority={priority}
-      unoptimized
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
     />
   );
 }

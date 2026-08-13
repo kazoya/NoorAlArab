@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   description:
     "تصور أولي مستقل لمنظومة ذكاء صناعي وأتمتة لشركة نور العرب للصناعات البلاستيكية. ليس نظاماً رسمياً للشركة، ويحتاج اكتشافاً ميدانياً قبل أي تقدير دقيق.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/icon.png", type: "image/png", sizes: "32x32" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
   openGraph: {
     title: "Nour Al Arab | Industrial AI Transformation Concept",
@@ -56,9 +56,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="ar"
       dir="rtl"
+      suppressHydrationWarning
       className={`${arabic.variable} ${sans.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full">
+      <body className="min-h-full" suppressHydrationWarning>
         <TooltipProvider>
           <AppShell>{children}</AppShell>
           <Toaster />
