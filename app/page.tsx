@@ -54,7 +54,7 @@ export default function HomePage() {
             <p className="text-xs font-medium tracking-[0.22em] text-gold uppercase">
               Nour Al-Arab · Jordan · منذ {siteConfig.since}
             </p>
-            <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="mt-2 font-heading text-[1.65rem] font-bold tracking-tight text-balance sm:text-4xl">
               تغليف ممتاز، نهج متين ومستدام للثقة
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-white/75 sm:text-base">

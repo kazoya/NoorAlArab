@@ -131,9 +131,19 @@
   }
   html {
     @apply font-sans scroll-smooth;
+    font-size: 16px;
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    line-height: 1.45;
+    letter-spacing: 0;
   }
   .tabular {
     font-variant-numeric: tabular-nums;

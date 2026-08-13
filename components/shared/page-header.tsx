@@ -30,7 +30,7 @@ export function PageHeader({
           </p>
         ) : null}
         <div className="flex flex-wrap items-center gap-2">
-          <h1 className="text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+          <h1 className="text-xl font-bold tracking-tight text-balance sm:text-2xl">
             {title}
           </h1>
           {demo ? <DemoBadge label={demoLabel} /> : null}

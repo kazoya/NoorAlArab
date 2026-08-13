@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Geist_Mono, IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { AppShell } from "@/components/layout/app-shell";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { getSiteUrl } from "@/lib/config";
 import "./globals.css";
 
-const arabic = IBM_Plex_Sans_Arabic({
+const arabic = localFont({
+  src: [
+    { path: "./fonts/DroidArabicKufi-Regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/DroidArabicKufi-Regular.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/DroidArabicKufi-Bold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/DroidArabicKufi-Bold.ttf", weight: "700", style: "normal" },
+  ],
   variable: "--font-arabic",
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const sans = IBM_Plex_Sans({
