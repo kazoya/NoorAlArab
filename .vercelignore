@@ -1,6 +1,6 @@
 _uiux_extract
 ui-ux.zip
-LOGO.png
+/LOGO.png
 .cursor
 .env.local
 .node_modules

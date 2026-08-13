@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { DeveloperQr } from "@/components/layout/developer-qr";
 import { WhatsAppQr } from "@/components/layout/whatsapp-qr";
 import {
@@ -24,13 +24,7 @@ export function SiteFooter() {
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <span className="brand-arch relative h-14 w-11 shrink-0 overflow-hidden border border-gold/50 bg-black">
-              <Image
-                src="/brand/logo.png"
-                alt={siteConfig.nameAr}
-                width={44}
-                height={56}
-                className="h-full w-full object-cover"
-              />
+              <BrandLogo alt={siteConfig.nameAr} />
             </span>
             <div>
               <p className="text-sm font-medium">لنبدأ من واقع المصنع، لا من الافتراضات.</p>

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/config";
 
@@ -36,14 +36,7 @@ export function BrandMark({
           dim.box,
         )}
       >
-        <Image
-          src="/brand/logo.png"
-          alt={`${siteConfig.nameAr} — شعار نور العرب`}
-          width={dim.img}
-          height={dim.img}
-          className="h-full w-full object-cover object-center"
-          priority
-        />
+        <BrandLogo alt={`${siteConfig.nameAr} — شعار نور العرب`} priority />
       </span>
       {showText ? (
         <span className="min-w-0 text-right">

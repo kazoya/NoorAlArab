@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   description:
     "تصور أولي مستقل لمنظومة ذكاء صناعي وأتمتة لشركة نور العرب للصناعات البلاستيكية. ليس نظاماً رسمياً للشركة، ويحتاج اكتشافاً ميدانياً قبل أي تقدير دقيق.",
   icons: {
-    icon: "/brand/logo.png",
-    apple: "/brand/logo.png",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     title: "Nour Al Arab | Industrial AI Transformation Concept",
     description: "تصور مستقل للذكاء الصناعي والأتمتة — Industrial AI & Automation Concept",
     locale: "ar_JO",
     type: "website",
-    images: [{ url: "/brand/logo.png" }],
+    images: [{ url: "/logo.png" }],
   },
   twitter: {
     card: "summary_large_image",

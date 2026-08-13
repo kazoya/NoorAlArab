@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { DeveloperQr } from "@/components/layout/developer-qr";
 import { DemoBadge } from "@/components/shared/demo-badge";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ export function CommandBar({ onOpenMenu }: CommandBarProps) {
             className="brand-arch relative hidden h-9 w-7 shrink-0 overflow-hidden border border-gold/50 bg-black sm:block"
             aria-label="الصفحة الرئيسية"
           >
-            <Image src="/brand/logo.png" alt="" width={28} height={36} className="h-full w-full object-cover" />
+            <BrandLogo alt="" />
           </Link>
           <div className="min-w-0">
             <p className="truncate text-sm font-medium">{findNavLabel(pathname)}</p>

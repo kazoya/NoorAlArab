@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Globe2, MapPin, Package, Printer, ShieldCheck } from "lucide-react";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { HonestyNote } from "@/components/shared/demo-badge";
 import { Button } from "@/components/ui/button";
 import { getCompanyWebsiteUrl, getMapsUrl, siteConfig } from "@/lib/config";
@@ -48,14 +48,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gold/35 bg-[#111111] px-5 py-8 text-white shadow-[0_20px_60px_rgb(0_0_0_/_0.35)] sm:px-10 sm:py-12">
         <div className="animate-brand-rise flex flex-col items-start gap-6 sm:flex-row sm:items-center">
           <span className="brand-arch relative h-32 w-[6.25rem] shrink-0 overflow-hidden border border-gold/80 bg-black shadow-[0_12px_40px_rgb(201_162_39_/_0.4)]">
-            <Image
-              src="/brand/logo.png"
-              alt={`${siteConfig.nameAr} — شعار نور العرب`}
-              width={100}
-              height={128}
-              className="h-full w-full object-cover"
-              priority
-            />
+            <BrandLogo alt={`${siteConfig.nameAr} — شعار نور العرب`} priority />
           </span>
           <div>
             <p className="text-xs font-medium tracking-[0.22em] text-gold uppercase">

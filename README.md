@@ -61,7 +61,7 @@ NEXT_PUBLIC_CONTACT_EMAILS=abukhalifeh1@gmail.com,nouralarab@gmail.com
 NEXT_PUBLIC_COMPANY_WEBSITE=https://nouralarab.com/
 ```
 
-يُبنى رابط المصنع `https://wa.me/{phone}?text=...` ويظهر رمز QR في التذييل. رمز المبرمج في الشريط العلوي يومض ويدور. الشعار من `public/brand/logo.png`.
+يُبنى رابط المصنع `https://wa.me/{phone}?text=...` ويظهر رمز QR في التذييل. رمز المبرمج في الشريط العلوي يومض ويدور. الشعار من `public/logo.png`.
 
 ## 5. البريد
 
