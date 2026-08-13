@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+
+# local UI skill extract (source remains ui-ux.zip)
+_uiux_extract/
+ui-ux.zip
+/LOGO.png

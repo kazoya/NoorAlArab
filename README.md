@@ -24,8 +24,13 @@ npm run build
 
 ```
 NEXT_PUBLIC_DISCOVERY_FORM_URL=
-NEXT_PUBLIC_WHATSAPP_PHONE=
-NEXT_PUBLIC_WHATSAPP_PREFILL=
+NEXT_PUBLIC_WHATSAPP_PHONE=+962777700050
+NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم ورحمة الله وبركاته السيد مدير الإنتاج المهندس محمد أبوخليفة لطفاً أود الاستفسار بخصوص 
+NEXT_PUBLIC_DEVELOPER_WHATSAPP_PHONE=+962787523192
+NEXT_PUBLIC_DEVELOPER_WHATSAPP_PREFILL=المهندس صهيب الصالح لطفأ نود الاستفسار عن آلية 
+NEXT_PUBLIC_MAPS_URL=https://maps.app.goo.gl/6SKJNAH3Fwx1zaGVA
+NEXT_PUBLIC_CONTACT_EMAILS=abukhalifeh1@gmail.com,nouralarab@gmail.com
+NEXT_PUBLIC_COMPANY_WEBSITE=https://nouralarab.com/
 NEXT_PUBLIC_CONTACT_EMAIL=
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 OPENAI_API_KEY=
@@ -44,18 +49,23 @@ DATABASE_URL=
 
 إن تُرك المتغير فارغاً يبقى النموذج الداخلي يعمل، ويُعرض توجيه إعداد بدل رابط وهمي.
 
-## 4. واتساب
+## 4. واتساب والموقع والبريد
 
 ```
-NEXT_PUBLIC_WHATSAPP_PHONE=962777700050
-NEXT_PUBLIC_WHATSAPP_PREFILL=مرحباً مهندس محمد أبوخليفة لطفاً أود التحدث بخصوص 
+NEXT_PUBLIC_WHATSAPP_PHONE=+962777700050
+NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم ورحمة الله وبركاته السيد مدير الإنتاج المهندس محمد أبوخليفة لطفاً أود الاستفسار بخصوص 
+NEXT_PUBLIC_DEVELOPER_WHATSAPP_PHONE=+962787523192
+NEXT_PUBLIC_DEVELOPER_WHATSAPP_PREFILL=المهندس صهيب الصالح لطفأ نود الاستفسار عن آلية 
+NEXT_PUBLIC_MAPS_URL=https://maps.app.goo.gl/6SKJNAH3Fwx1zaGVA
+NEXT_PUBLIC_CONTACT_EMAILS=abukhalifeh1@gmail.com,nouralarab@gmail.com
+NEXT_PUBLIC_COMPANY_WEBSITE=https://nouralarab.com/
 ```
 
-يُبنى الرابط `https://wa.me/{phone}?text=...` ويظهر رمز QR في التذييل وصفحة التواصل. لا يُثبَّت الرقم في الشيفرة.
+يُبنى رابط المصنع `https://wa.me/{phone}?text=...` ويظهر رمز QR في التذييل. رمز المبرمج في الشريط العلوي يومض ويدور. الشعار من `public/brand/logo.png`.
 
 ## 5. البريد
 
-`NEXT_PUBLIC_CONTACT_EMAIL` يظهر كرابط `mailto` عند ضبطه فقط.
+`NEXT_PUBLIC_CONTACT_EMAILS` يعرض `abukhalifeh1@gmail.com` و`nouralarab@gmail.com` كروابط `mailto`. يمكن تجاوزهما من البيئة.
 
 ## 6. استبدال البيانات التجريبية
 

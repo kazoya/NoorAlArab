@@ -27,10 +27,10 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
                     href={item.href}
                     onClick={onNavigate}
                     className={cn(
-                      "block rounded-lg px-3 py-2 text-sm transition-colors",
+                      "block rounded-lg border px-3 py-2 text-sm transition-colors",
                       active
-                        ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                        : "text-sidebar-foreground/75 hover:bg-sidebar-accent/70 hover:text-sidebar-foreground",
+                        ? "border-gold/70 bg-sidebar-accent text-gold"
+                        : "border-transparent text-sidebar-foreground/75 hover:bg-sidebar-accent/70 hover:text-sidebar-foreground",
                     )}
                   >
                     {item.label}
