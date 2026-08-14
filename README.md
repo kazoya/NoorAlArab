@@ -25,7 +25,7 @@ npm run build
 ```
 NEXT_PUBLIC_DISCOVERY_FORM_URL=
 NEXT_PUBLIC_WHATSAPP_PHONE=+962777700050
-NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم ورحمة الله وبركاته السيد مدير الإنتاج المهندس محمد أبوخليفة لطفاً أود الاستفسار بخصوص 
+NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم م. محمد أبوخليفة بخصوص 
 NEXT_PUBLIC_DEVELOPER_WHATSAPP_PHONE=+962787523192
 NEXT_PUBLIC_DEVELOPER_WHATSAPP_PREFILL=المهندس صهيب الصالح لطفأ نود الاستفسار عن آلية 
 NEXT_PUBLIC_MAPS_URL=https://maps.app.goo.gl/6SKJNAH3Fwx1zaGVA
@@ -53,7 +53,7 @@ DATABASE_URL=
 
 ```
 NEXT_PUBLIC_WHATSAPP_PHONE=+962777700050
-NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم ورحمة الله وبركاته السيد مدير الإنتاج المهندس محمد أبوخليفة لطفاً أود الاستفسار بخصوص 
+NEXT_PUBLIC_WHATSAPP_PREFILL=السلام عليكم م. محمد أبوخليفة بخصوص 
 NEXT_PUBLIC_DEVELOPER_WHATSAPP_PHONE=+962787523192
 NEXT_PUBLIC_DEVELOPER_WHATSAPP_PREFILL=المهندس صهيب الصالح لطفأ نود الاستفسار عن آلية 
 NEXT_PUBLIC_MAPS_URL=https://maps.app.goo.gl/6SKJNAH3Fwx1zaGVA

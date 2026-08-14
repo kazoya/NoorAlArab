@@ -22,8 +22,7 @@ export const siteConfig = {
   websiteUrl: "https://nouralarab.com/",
   defaultMapsUrl: "https://maps.app.goo.gl/6SKJNAH3Fwx1zaGVA",
   defaultWhatsAppPhone: "962777700050",
-  defaultWhatsAppPrefill:
-    "السلام عليكم ورحمة الله وبركاته السيد مدير الإنتاج المهندس محمد أبوخليفة لطفاً أود الاستفسار بخصوص ",
+  defaultWhatsAppPrefill: "السلام عليكم م. محمد أبوخليفة بخصوص ",
   defaultEmails: ["abukhalifeh1@gmail.com", "nouralarab@gmail.com"] as const,
   developer: {
     nameAr: "م. صهيب الصالح",
@@ -84,6 +83,13 @@ export function getWhatsAppUrl(extra = ""): string {
   if (!phone) return "";
   const text = `${getWhatsAppPrefill()}${extra}`.trim();
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+}
+
+/** Phone-only link for QR scanning — much lower density than a long Arabic prefill. */
+export function getWhatsAppQrValue(): string {
+  const phone = getWhatsAppPhone();
+  if (!phone) return "";
+  return `https://wa.me/${phone}`;
 }
 
 export function getDeveloperWhatsAppPhone(): string {

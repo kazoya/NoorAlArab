@@ -5,6 +5,7 @@ import { QRCodeSVG } from "qrcode.react";
 import {
   getWhatsAppPhoneDisplay,
   getWhatsAppPrefill,
+  getWhatsAppQrValue,
   getWhatsAppUrl,
 } from "@/lib/config";
 
@@ -15,6 +16,7 @@ export function WhatsAppQr() {
   }, []);
 
   const url = getWhatsAppUrl();
+  const qrValue = getWhatsAppQrValue();
   const phone = getWhatsAppPhoneDisplay();
   if (!url) {
     return (
@@ -33,15 +35,22 @@ export function WhatsAppQr() {
         </p>
       ) : null}
       <div className="flex items-start gap-4">
-        <div className="rounded-lg border border-gold/40 bg-white p-2">
+        <div className="rounded-lg border border-gold/40 bg-white p-3">
           {mounted ? (
-            <QRCodeSVG value={url} size={112} level="M" />
+            <QRCodeSVG
+              value={qrValue}
+              size={168}
+              level="L"
+              includeMargin
+              bgColor="#ffffff"
+              fgColor="#111111"
+            />
           ) : (
-            <span className="block bg-white" style={{ width: 112, height: 112 }} />
+            <span className="block bg-white" style={{ width: 168, height: 168 }} />
           )}
         </div>
         <div className="space-y-2 text-xs leading-6 text-muted-foreground">
-          <p>امسح الرمز أو اضغط الرابط لفتح محادثة برسالة جاهزة:</p>
+          <p>امسح الرمز لفتح واتساب مباشرة، أو اضغط الرابط لرسالة جاهزة قصيرة:</p>
           <p className="text-foreground">{getWhatsAppPrefill()}…</p>
           <a
             href={url}
