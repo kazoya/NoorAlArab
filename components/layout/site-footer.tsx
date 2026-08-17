@@ -98,10 +98,7 @@ export function SiteFooter() {
         </div>
         <div className="space-y-4">
           <WhatsAppQr />
-          <div className="rounded-xl border border-gold/30 bg-[#111111] p-3">
-            <p className="mb-2 text-xs text-white/75">للتواصل مع المبرمج امسح الرمز</p>
-            <DeveloperQr />
-          </div>
+          <DeveloperQr />
         </div>
       </div>
     </footer>

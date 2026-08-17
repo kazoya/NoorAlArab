@@ -88,10 +88,7 @@ export default function ContactPage() {
         ) : null}
       </div>
       <WhatsAppQr />
-      <div className="rounded-xl border border-gold/30 bg-[#111111] p-4">
-        <p className="mb-3 text-sm text-white/80">للتواصل مع المبرمج امسح الرمز</p>
-        <DeveloperQr />
-      </div>
+      <DeveloperQr />
       <HonestyNote>
         {siteConfig.recipient}، صُمم هذا النموذج ليكون بداية نقاش عملي حول ما يمكن للذكاء الاصطناعي
         والأتمتة إضافته إلى العمليات الصناعية في نور العرب. لا نفترض أننا نعرف المصنع أكثر من
